@@ -1,7 +1,8 @@
-# Notion MCP Server: `notion-texonom`
+# Browse your entire Notion workspace, not just one database
 
-**Markdown based Notion navigating MCP with just a single `ROOT_PAGE` variable, eliminating the need for a token.**
+Markdown based Notion navigating MCP with just a single `ROOT_PAGE` variable, eliminating the need for a token.
 
+- Notion MCP Server: `notion-texonom`
 - Notion pages are converted into `text/markdown` mimeType notes.
 - Search and retrieve relevant pages based on graph distance, considering parent-child and reference relationships.
 
