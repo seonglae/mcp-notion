@@ -15,7 +15,8 @@
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector src/index.ts",
     "lint": "eslint --cache \"**/*.{ts,tsx}\" --fix --ignore-path .gitignore",
-    "format": "prettier --cache \"**/*.{js,json,md,css,js,ts,tsx}\" --write --ignore-path .gitignore"
+    "format": "prettier --cache \"**/*.{js,json,md,css,js,ts,tsx}\" --write --ignore-path .gitignore",
+    "test": "vitest run"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.7.0",
