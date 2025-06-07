@@ -14,7 +14,7 @@
     "build": "tsc && node -e \"require('fs').chmodSync('build/gateway.js', '755')\"",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector src/index.ts",
-    "lint": "eslint --cache \"**/*.{ts,tsx}\" --fix --ignore-path .gitignore",
+    "lint": "eslint --cache \"**/*.{ts,tsx}\" --fix",
     "format": "prettier --cache \"**/*.{js,json,md,css,js,ts,tsx}\" --write --ignore-path .gitignore",
     "test": "vitest run"
   },
@@ -33,6 +33,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.26.5",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.28.0",
     "@types/cors": "^2.8.17",
     "@types/eventsource": "^1.1.15",
     "@types/node": "^20.11.24",
@@ -41,6 +43,7 @@
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.1",
     "prettier": "^3.4.2",
     "typescript": "^5.3.3",
     "vitest": "^2.1.8"
