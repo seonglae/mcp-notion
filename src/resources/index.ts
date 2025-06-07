@@ -20,21 +20,21 @@ export function setListResources(server: Server, client: NotionAPI, exporter: No
         collectionConcurrency: 100,
         concurrency: 100,
         maxPage: 10,
-        fetchOption: { timeout: 1000 }
-      }
+        fetchOption: { timeout: 1000 },
+      },
     )
     exporter.recordMap = recordMap
     exporter.pageTree = pageTree
     exporter.pageMap = pageMap
     const resources: Resource[] = []
-    exporter.writeFile = async function writeFile (path: string, target: string) {
+    exporter.writeFile = async function writeFile(path: string, target: string) {
       const id = parsePageId(path)
       const slug = getCanonicalPageId(id, recordMap)
       resources.push({
         uri: `note://${slug}`,
         mimeType: 'text/markdown',
         name: getBlockTitle(recordMap.block[id]?.value, recordMap),
-        description: getPageDescription(recordMap.block[id]?.value, recordMap)
+        description: getPageDescription(recordMap.block[id]?.value, recordMap),
       })
     }
     await exporter.exportMd(id)
@@ -55,13 +55,13 @@ export function setReadResource(server: Server, client: NotionAPI, exporter: Not
         uri: request.params.uri,
         mimeType: 'text/markdown',
         text: md,
-      }
+      },
     ]
     return { contents }
   })
 }
 
-function getPageDescription(block: Block, recordMap: ExtendedRecordMap) {
+export function getPageDescription(block: Block, recordMap: ExtendedRecordMap) {
   const firstBlock = recordMap.block[block?.content?.[0] as string]?.value
   const firstBlockTitle = firstBlock ? getBlockTitle(firstBlock, recordMap).trim() : ''
   let contentDescription: string
