@@ -114,3 +114,14 @@ npx -y supergateway --port 8000 --stdio "npx -y @modelcontextprotocol/server-fil
 ```
 
 Make sure to replace `/some/folder` with the appropriate path to your folder.
+
+## Docker
+
+You can build and run the server using Docker:
+
+```bash
+docker build -t mcp-notion .
+docker run -e ROOT_PAGE=<your-root-page-id> -p 3000:3000 mcp-notion
+```
+
+This exposes the server on port 3000 by default. Set `ROOT_PAGE` to the ID of the root Notion page you want to serve.
